@@ -91,6 +91,11 @@ for i = 6:7
     gas(i).cp = 1156;
 end
 
+% Changing gamma as the air exiting the combustor is hot now
+gas(4:7).gamma = 1.33;
+gas(4:7).cp = 1148;
+gas(4:7).R = gas(4:7).cp * ((gas(4:7).gamma - 1) / gas(4:7).gamma);
+
 %% 13 - Turbine (4 -> 5)
 [turb_T_out, turb_p_out, turb_work, gas(6)] = multi_stage_turbine(gas(5), comp_work, eng_param.turb_n_stages, eng_perf.eta_t, eng_perf.mech_loss, M(5), M(6), gas(6));
 
