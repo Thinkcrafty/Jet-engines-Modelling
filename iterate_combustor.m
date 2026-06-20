@@ -4,7 +4,6 @@ tol = 0.01; max_iter = 100; converged = false; n_iter = 0;
 T_0in = get_T(gas_in.T, gas_in.gamma, M_in);
 p_0in = get_p(gas_in.P, gas_in.gamma, M_in);
 
-% Thermodynamic balance to replace gas.equilibrate('HP')
 % (1) * cp_cold * T_0in + f * LHV * eta_b = (1+f) * cp_hot * T_0out
 gas_out.gamma = 1.33; % hot gas prop
 gas_out.cp = 1156;    % hot gas prop
